@@ -21,11 +21,17 @@ API
 The server will send each player messages based on the current state of the game:
 
 You are now in a game. - Self Explainitory
+
 Is not your turn. Please wait. - If you send a message when it is not your turn
+
 It is your turn. - It is your turn, you will need to send a position for your turn to the server
+
 Position taken. Try again. - The position you sent is already taken. You will need to send another position for your move.
+
 Invalid move. Try again - The move you sent was not recognised by the server
+
 You Win! - Self Explainitory
+
 You Lost! - Self Explaintory
 
 When making a client the only message you need to send to the server is a position from 0 to 8.
