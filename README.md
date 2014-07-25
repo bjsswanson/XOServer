@@ -9,10 +9,10 @@ This is a slight twist on normal XO where you will not be told the state of the 
 
 The positions on the board are represented by the numbers 0 - 8 in the following configuration:
 
-| --- | --- | --- |
-| 0 | 1 | 2 |
-| 3 | 4 | 5 |
-| 6 | 7 | 8 |
+0 | 1 | 2  
+--- | --- | ---
+3 | 4 | 5
+6 | 7 | 8
 
 
 API
