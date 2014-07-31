@@ -23,14 +23,12 @@ public class Game {
 	private Session player2;
 
 	private Session turn;
-	private int turnCounter;
 	private int[] game;
 
 	public Game(Session player1, Session player2) {
 		this.player1 = player1;
 		this.player2 = player2;
 
-		turnCounter = 0;
 		turn = player1;
 		game = new int[9];
 
@@ -57,7 +55,6 @@ public class Game {
 					return tieGame();
 				} else {
 					turn = getOtherPlayer();
-					turnCounter += 1;
 					sendMessage(turn, IT_IS_YOUR_TURN);
 					return PLEASE_WAIT;
 				}
@@ -72,7 +69,6 @@ public class Game {
 		sendMessage(getOtherPlayer(), GAME_LOST);
 		sendBoard(turn);
 		sendBoard(getOtherPlayer());
-		turnCounter = 9;
 		return GAME_OVER;
 	}
 
@@ -81,14 +77,12 @@ public class Game {
 		sendMessage(player2, GAME_TIE);
 		sendBoard(player1);
 		sendBoard(player2);
-		turnCounter = 9;
 		return GAME_OVER;
 	}
 
 	private String disconnected() {
 		sendMessage(player1, PLAYER_2_DISCONNECTED);
 		sendMessage(player2, PLAYER_1_DISCONNECTED);
-		turnCounter = 9;
 		return GAME_OVER;
 	}
 
@@ -125,7 +119,13 @@ public class Game {
 	}
 
 	public boolean isGameOver() {
-		return turnCounter >= 9;
+		for(int i : game){
+			if(i == 0){
+				return false;
+			}
+		}
+
+		return true;
 	}
 
 	public boolean isGameWon() {
