@@ -5,6 +5,8 @@ A Java Websocket (Project Tyrus) Server implentation for playing Blind Noughts a
 
 The objective of this workshop is to create a websocket client that plays XO against another player.
 
+The documentation is available at https://tyrus.java.net/
+
 This is a slight twist on normal XO where you will not be told the state of the board. As you submit the location of your move you will be told if that position is already taken.
 
 The positions on the board are represented by the numbers 0 - 8 in the following configuration:
